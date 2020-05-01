@@ -499,10 +499,10 @@
   //#define DEFAULT_Ki   2.25
   //#define DEFAULT_Kd 440
 
-  // from VORON
-  #define  DEFAULT_Kp 23.72
-  #define  DEFAULT_Ki 1.56
-  #define DEFAULT_Kd 90.34
+  // from VORON autotune
+#define DEFAULT_Kp 38.04
+#define DEFAULT_Ki 7.14
+#define DEFAULT_Kd 50.63
 
 #endif // PIDTEMP
 
@@ -553,9 +553,9 @@
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
   // Results from VORON
-  #define DEFAULT_bedKp 500.52
-  #define DEFAULT_bedKi  84.25
-  #define DEFAULT_bedKd 970.40
+#define DEFAULT_bedKp 44.69
+#define DEFAULT_bedKi 1.31
+#define DEFAULT_bedKd 1015.42
 #endif // PIDTEMPBED
 
 // @section extruder
@@ -973,7 +973,7 @@
 #define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 8000
+#define XY_PROBE_SPEED 6000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -990,8 +990,8 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 3
-//#define EXTRA_PROBING    1
+#define MULTIPLE_PROBING 3
+//#define EXTRA_PROBING    2
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1329,7 +1329,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-#define LEVEL_BED_CORNERS
+//#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
